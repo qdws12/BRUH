@@ -2,16 +2,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1 id="hello">안녕하세요</h1>
-    <h1 id="hi">js gogogogo</h1>
-
-
+    
+  <div class="alert-box" id="alter-box1">알림</div>
+    <!-- 온클릭 누르면 실행 -->
+  <button onclick="document.getElementById('alter-box1').style.display = 'block';">누르지마</button>
     <script>
-      document.getElementById('hello').style.fontSize = '16px'; // 오른쪽을 왼쪽에 집어넣어주세요
-      document.getElementById('hi').style.fontSize = '100px';
-      document.getElementById('hi').innerHTML = 'js nonono';
       
     </script>
 </body>
