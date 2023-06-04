@@ -6,13 +6,16 @@
 </head>
 <body>
     
-  <div class="alert-box" id="alter-box1">알림</div>
+  <div class="alert-box" id="alter-box1">알림<button onclick="btclose()">닫기</button></div>
     <!-- 온클릭 누르면 실행 -->
-  <button onclick="document.getElementById('alter-box1').style.display = 'block';">누르지마<button onclick="btclose()">닫기</button></button>
+  <button onclick="btopen()">누르지마</button>
 
     <script>
       function btclose(){
         document.getElementById('alter-box1').style.display ='none';
+      }
+      function btopen(){
+        document.getElementById('alter-box1').style.display = 'block';
       }
     </script>
 </body>
