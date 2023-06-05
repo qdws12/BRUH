@@ -7,7 +7,7 @@
 <body>
     
   <div class="alert-box" id="alter-box1">
-    <p id="idpass">알림창</p>
+    <p id="idpass" class="idpass1">알림창</p>
     <button onclick="btalter('none')">닫기</button>
   </div>
   <!-- 온클릭 누르면 실행 -->
@@ -19,7 +19,9 @@
         document.getElementById('alter-box1').style.display = a;
       }
       function idpass(a){
-        document.getElementById('idpass').innerHTML= a ;
+        document.getElementsByClassName('idpass1')[0].innerHTML= a ;
+        // class 명 인덱싱 [번째]                  0번째  
+        // document.getElementById('idpass').innerHTML= a ;
       }
     </script>
 </body>
