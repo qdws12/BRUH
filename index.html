@@ -8,20 +8,30 @@
     
   <div class="alert-box" id="alter-box1">
     <p id="idpass" class="idpass1">알림창</p>
-    <button onclick="btalter('none')">닫기</button>
+    <button id="close">닫기</button>
   </div>
   <!-- 온클릭 누르면 실행 -->
   <button onclick="btalter('block'),idpass('아이디 입력')">아이디</button>
   <button onclick="btalter('block'),idpass('비밀번호 입력')">비밀번호</button>
 
     <script>
+      document.getElementById('close').addEventListener('click',function(){document.getElementById('alter-box1').style.display = 'none';});
+
+
       function btalter(a){
         document.getElementById('alter-box1').style.display = a;
       }
+
+
+
+
+
+
+
+
+
       function idpass(a){
-        document.getElementsByClassName('idpass1')[0].innerHTML= a ;
-        // class 명 인덱싱 [번째]                  0번째  
-        // document.getElementById('idpass').innerHTML= a ;
+        document.getElementById('idpass').innerHTML= a ;
       }
     </script>
 </body>
