@@ -6,3 +6,10 @@
   /* 숨겨놓기  보여줄때는 block */
   display: none; 
 }
+
+.list-group{
+  display: none;
+}
+.show{
+  display: block;
+}
