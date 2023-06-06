@@ -72,11 +72,15 @@
       //   실행코드
       // }
       $('#send').on('click',function(){
-        if($('#email')[0].value ==''){
+
+        if($('#email')[0].value =='' && $('#password')[0].value == ''){
+          alert('이메일과 비밀번호를 입력하거라');
+        }
+        else if($('#email')[0].value ==''){
 
           alert('이메일 입력하거라');
         }
-        if($('#password')[0].value ==''){
+        else if($('#password')[0].value ==''){
 
           alert('비밀번호 입력하거라')
         }
