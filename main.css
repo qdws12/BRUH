@@ -1,18 +1,3 @@
-.alert-box {
-  background-color: brown;
-  padding: 20px;
-  color: yellowgreen;
-  border-radius: 10px;
-  /* 숨겨놓기  보여줄때는 block */
-  display: none; 
-}
-
-.list-group{
-  display: none;
-}
-.show{
-  display: block;
-}
 
 .black-bg {
   width : 100%;
@@ -21,10 +6,32 @@
   background : rgba(0,0,0,0.5);
   z-index : 5;
   padding: 30px;
-  display: none;
+  visibility: hidden; 
+  /* 숨기기 */
+  opacity: 0;
+
+  transition: all 1s;
 }
 .white-bg {
   background: white;
   border-radius: 5px;
   padding: 30px;
 } 
+
+
+.list-group{
+  display: none !important;
+}
+.show{
+  display: block !important;
+}
+
+.open-modal{
+  visibility: visible;
+  opacity: 1;
+}
+.close-modal{
+  visibility: hidden;
+  opacity: 0;
+}
+
