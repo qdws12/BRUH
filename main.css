@@ -10,7 +10,7 @@
   /* 숨기기 */
   opacity: 0;
 
-  transition: all 1s;
+  transition: all 0.3s;
 }
 .white-bg {
   background: white;
@@ -35,3 +35,8 @@
   opacity: 0;
 }
 
+
+.main-bg{
+  padding: 100px 20px;
+  background: ghostwhite;
+}

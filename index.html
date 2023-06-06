@@ -16,7 +16,16 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="password">
+           </div>
+           <button type="submit" class="btn btn-primary" id="send">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form> 
       </div>
     </div> 
 
@@ -38,7 +47,10 @@
       <li class="list-group-item">And a fifth one</li>
     </ul> 
 
-    <button id="open">로그인</button>
+    <div class="main-bg">
+      <h4>디아블로4 재밌나? 쌀먹안된다는데</h4>
+      <button id="open" class="btn btn-primary">로그인</button>
+    </div>
 
     
     
@@ -47,19 +59,36 @@
 
     
       $('#open').on('click',function(){
-        $('.black-bg').addClass('open-modal');
+        $('.black-bg').addClass('open-modal').removeClass('close-modal');
       })
       $('#close').on('click',function(){
-        $('.black-bg').addClass('close-modal');
+        $('.black-bg').addClass('close-modal').removeClass('open-modal');
       })
         
       $('.navbar-toggler').on('click',function(){
         $('.list-group')[0].classList.toggle('show');})
 
+      // if(조건){
+      //   실행코드
+      // }
+      $('#send').on('click',function(){
+        if($('#email')[0].value ==''){
+
+          alert('이메일 입력하거라');
+        }
+        if($('#password')[0].value ==''){
+
+          alert('비밀번호 입력하거라')
+        }
+        else if(('#password')[0].length < 6){
+          alert('6자 이상 입력하거라');
+        }
+      
+      });
+      
+
     </script>
     
-
-
 
 
 
