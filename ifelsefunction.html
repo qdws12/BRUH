@@ -42,7 +42,61 @@
       불합격(60,60);
     
     </script>
+
+    <script>
+
+      let age = 24;
+      const home = 'busan';
+
+      var dprma = 60000;
+      var alfodprma = 0;
+      var aucsus = 2;
+
+      if(dprma >= 50000){
+        alfodprma = dprma*(1.2**aucsus);
+      }else{
+        alfodprma = dprma*(1+0.15)*(1+0.15);
+      }
+      
+
+
+      console.log(alfodprma);
+
+    </script>
     
+    <script>
+      var first = 360;
+      var ekcuajrdma = 0;
+
+      ekcuajrdma = first+(first* 2/3)+((first* 2/3)*2/3);
+
+      console.log(ekcuajrdma);
+
+    </script>
+
+
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
+
+    <script>
+
+      var count = 0;
+      document.getElementById('send-answer').addEventListener('click',function(){
+        count+=1;
+        var ekq = document.getElementById('answer').value;
+        if (ekq  == '1335'){
+          alert('tt');
+        }else if (ekq != '1335' && count > 2){
+          alert('zz');
+        }
+      })
+
+      var first = 360;
+      first = first/(1-(2/3));
+
+      console.log(first);
+    </script>
 
 
 

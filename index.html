@@ -29,63 +29,8 @@
       </div>
     </div> 
 
-
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand">글카가 970인건에 대하여</span>
-        <span class="badge bg-dark">Dark 🔄</span>
-        <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav> 
-    
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul> 
-
-    <div class="main-bg">
-      <h4>디아블로4 재밌나? 쌀먹안된다는데</h4>
-      <button id="open" class="btn btn-primary">로그인</button>
-    </div>
-
-    
-    
-    
-    <script> 
-
-
-      var count = 0;
-
-      $('.badge').on('click',function(){
-        count++;
-        if(count % 2){
-          $('.badge').html('Light 🔄');
-        }
-        else{
-          $('.badge').html('Dark 🔄');
-        }
-      })
-    
-      $('#open').on('click',function(){
-        $('.black-bg').addClass('open-modal').removeClass('close-modal');
-      })
-      $('#close').on('click',function(){
-        $('.black-bg').addClass('close-modal').removeClass('open-modal');
-      })
-        
-      $('.navbar-toggler').on('click',function(){
-        $('.list-group')[0].classList.toggle('show');})
-
-      // if(조건){
-      //   실행코드
-      // }
+    <script>
       $('#send').on('click',function(){
-
         if($('#email')[0].value =='' && $('#password')[0].value == ''){
           alert('이메일과 비밀번호를 입력하거라');
         }
@@ -100,15 +45,81 @@
         else if(('#password')[0].length < 6){
           alert('6자 이상 입력하거라');
         }
+
+      });
+      </script>
+
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">글카가 970인건에 대하여</span>
+        <span class="badge bg-dark">Dark 🔄</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav> 
+
+    <script>
+      
+    </script>
+    
+    <script> 
+      var count = 0;
+
+      $('.badge').on('click',function(){
+        count +=1;
+        if(count % 2 != 0){
+          $('.badge').html('Light 🔄');
+          $('.navbar').removeClass('navbar-light').removeClass('bg-light').addClass('navbar-dark').addClass('bg-dark');
+        }
+        else{
+          $('.badge').html('Dark 🔄');
+          $('.navbar').removeClass('navbar-dark').removeClass('bg-dark').addClass('navbar-light').addClass('bg-light');
+        }
+      })
+        
+      $('.navbar-toggler').on('click',function(){
+        $('.list-group')[0].classList.toggle('show');})
+    </script>
+    
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul> 
+
+    <div class="main-bg">
+      <h4>디아블로4 재밌나? 쌀먹안된다는데</h4>
+      <button id="open" class="btn btn-primary">로그인</button>
+    </div>
+
+    <script> 
+
+      $('#open').on('click',function(){
+        $('.black-bg').addClass('open-modal').removeClass('close-modal');})
+      $('#close').on('click',function(){
+        $('.black-bg').addClass('close-modal').removeClass('open-modal');})
+      $('#send').on('click',function(){
+
+      if($('#email')[0].value =='' && $('#password')[0].value == ''){
+        alert('이메일과 비밀번호를 입력하거라');
+      }
+      else if($('#email')[0].value ==''){
+
+        alert('이메일 입력하거라');
+      }
+      else if($('#password')[0].value ==''){
+
+        alert('비밀번호 입력하거라')
+      }
+      else if(('#password')[0].length < 6){
+        alert('6자 이상 입력하거라');
+      }
       
       });
-
-      
-
-
-
-      
-
     </script>
     
 
