@@ -61,7 +61,7 @@
     </nav> 
 
     <script>
-      
+
     </script>
     
     <script> 
@@ -96,6 +96,10 @@
       <button id="open" class="btn btn-primary">로그인</button>
     </div>
 
+    <div class="alert alert-danger">
+      <span id="sec">5</span>초 이내 구매시 사은품 증정
+    </div>
+
     <script> 
 
       $('#open').on('click',function(){
@@ -122,6 +126,22 @@
       });
     </script>
     
+    <script>
+      let ewq = 5
+      // setTimeout(function(){ $('.alert').hide(); },5000);
+      setInterval(qwe,1000);
+
+      
+      function qwe(){
+        document.getElementById('sec').innerHTML= ewq;
+        ewq -= 1;
+        setTimeout(hidetime,6000);
+      }
+
+      function hidetime(){
+        $('.alert').hide();
+      }
+    </script>
 
 
 
