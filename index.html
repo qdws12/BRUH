@@ -16,7 +16,8 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <form action="success.html">
+        <form action="">
+          <!-- success.html -->
           <div class="my-3">
             <input type="text" class="form-control" id="email">
            </div>
@@ -30,23 +31,35 @@
     </div> 
 
     <script>
-      $('#send').on('click',function(){
-        if($('#email')[0].value =='' && $('#password')[0].value == ''){
+
+      $('form').on('submit',function(){
+        var idval = $('#email').val();
+        var pwval = $('#password').val();
+        var idreg = /\S+@\S+\.\S+/;
+        var pwreg = /[A-Z]/;
+
+        if(idval =='' && pwval == ''){    
           alert('이메일과 비밀번호를 입력하거라');
         }
-        else if($('#email')[0].value ==''){
-
+        else if(/\S+@\S+\.\S+/.test(idval) == false){
+          alert('이메일 형식오류');
+        }
+        else if(idval ==''){
           alert('이메일 입력하거라');
         }
-        else if($('#password')[0].value ==''){
-
-          alert('비밀번호 입력하거라')
+        else if(pwval.length < 6){
+          if(pwval ==''){
+            alert('비밀번호 입력하거라');
+          }
+          else{
+            alert('비밀번호 6자 이상 입력하거라');
+          }
         }
-        else if(('#password')[0].length < 6){
-          alert('6자 이상 입력하거라');
+        else if(pwreg.test(pwval) == false){
+          alert('비밀번호 영어 대문자를 입력하거라');
         }
-
       });
+       
       </script>
 
 
@@ -107,22 +120,6 @@
       $('#close').on('click',function(){
         $('.black-bg').addClass('close-modal').removeClass('open-modal');})
       $('#send').on('click',function(){
-
-      if($('#email')[0].value =='' && $('#password')[0].value == ''){
-        alert('이메일과 비밀번호를 입력하거라');
-      }
-      else if($('#email')[0].value ==''){
-
-        alert('이메일 입력하거라');
-      }
-      else if($('#password')[0].value ==''){
-
-        alert('비밀번호 입력하거라')
-      }
-      else if(('#password')[0].length < 6){
-        alert('6자 이상 입력하거라');
-      }
-      
       });
     </script>
     
