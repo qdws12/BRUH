@@ -73,9 +73,6 @@
       </div>
     </nav> 
 
-    <script>
-
-    </script>
     
     <script> 
       var count = 0;
@@ -108,10 +105,25 @@
       <h4>디아블로4 재밌나? 쌀먹안된다는데</h4>
       <button id="open" class="btn btn-primary">로그인</button>
     </div>
-
-    <div class="alert alert-danger">
-      <span id="sec">5</span>초 이내 구매시 사은품 증정
+    
+    <!-- 넘치는거 숨김 -->
+    <div style="overflow: hidden;">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="img/car1.png" alt="">
+        </div>
+        <div class="slide-box">
+          <img src="img/car2.png" alt="">
+        </div>
+        <div class="slide-box">
+          <img src="img/car3.png" alt="">
+        </div>
+      </div>
     </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-next">다음</button>
 
     <script> 
 
@@ -124,21 +136,35 @@
     </script>
     
     <script>
-      let ewq = 5
-      // setTimeout(function(){ $('.alert').hide(); },5000);
-      setInterval(qwe,1000);
+      // 버튼눌러서 슬라이드 움직이기
+      $('.slide-1').on('click',function(){
+        $('.slide-container').css('transform','translateX(0vw)');
+      })
+      $('.slide-2').on('click',function(){
+        count = 1;
+        $('.slide-container').css('transform','translateX(-100vw)');
+      })
+      $('.slide-3').on('click',function(){
+        count = 2;
+        $('.slide-container').css('transform','translateX(-200vw)');
+      })
 
-      
-      function qwe(){
-        document.getElementById('sec').innerHTML= ewq;
-        ewq -= 1;
-        setTimeout(hidetime,6000);
-      }
+      var count = 0;
+      $('.slide-next').on('click',function(){
+        console.log(count);
+        if(count > 1){
+          // 제일 처음은 이미지1이니까 패스 이미지2,이미지3 두가지만 확인하면 처음으로 복귀
+          $('.slide-container').css('transform','translateX(0vw)');
+          count = 0;
+        }else{
+          count++;
+          $('.slide-container').css('transform','translateX(-'+ count+'00vw)');
+        }
+      })
 
-      function hidetime(){
-        $('.alert').hide();
-      }
+
     </script>
+
 
 
 

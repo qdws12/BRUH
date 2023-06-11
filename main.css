@@ -40,3 +40,16 @@
   padding: 100px 20px;
   background: ghostwhite;
 }
+
+
+.slide-container{
+  width: 300vw; /* 폭3배 */
+  transition: all 0.3s;
+}
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+.slide-box img{
+  width: 100%;
+}
