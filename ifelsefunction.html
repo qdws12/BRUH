@@ -99,6 +99,33 @@
     </script>
 
 
+    <script>
+
+      function ms(a,b){
+        var min = (a*60)*1000;
+        var sec = b*1000;
+        return min+sec;
+
+        // var minsec = ((a*60)+b)*1000;
+        // return minsec;
+      }
+
+      console.log(ms(2,10));
+
+
+      function sale(a,b){
+        var nd = a*0.9;
+        
+        if(b == true){
+          nd = nd - 1.5;
+        }
+        return nd;
+      }
+
+      console.log(sale(10,true));
+
+
+    </script>
 
 
 
