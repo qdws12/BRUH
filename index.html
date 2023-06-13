@@ -93,6 +93,8 @@
         $('.list-group')[0].classList.toggle('show');})
     </script>
     
+
+
     <ul class="list-group">
       <li class="list-group-item">An item</li>
       <li class="list-group-item">A second item</li>
@@ -106,6 +108,28 @@
       <button id="open" class="btn btn-primary">로그인</button>
     </div>
     
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll;">여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 여기다가 약관 넣으면 될듯 </div>
+
+
+    <script>
+
+      $('.lorem').on('scroll',function(){
+        var a = document.querySelector('.lorem').scrollTop;
+        var b = document.querySelector('.lorem').scrollHeight;
+        var c = document.querySelector('.lorem').clientHeight;
+        var check1 = (a+c);
+        if(check1 > b-5){
+          alert('다읽었네');
+        }
+      })
+    </script>
+
+
+
+
+
+    <div style="height: 1000px;"></div>
     <!-- 넘치는거 숨김 -->
     <div style="overflow: hidden;">
       <div class="slide-container">
