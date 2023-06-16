@@ -62,6 +62,20 @@
        
       </script>
 
+    <script>
+      $('.black-bg').on('click',function(e){
+
+        if(e.target == document.querySelector('.black-bg')){
+          $('.black-bg').removeClass('open-modal');
+        }
+        // e.target; 유저가 실제로 누른것
+        // e.currentTarget; 이벤트 리스너 달린 곳
+        // e.preventDefault();
+        // e.stopPropagation();
+      })
+    </script>
+
+
 
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
@@ -93,7 +107,7 @@
         $('.list-group')[0].classList.toggle('show');})
     </script>
     
-
+    
 
     <ul class="list-group">
       <li class="list-group-item">An item</li>
