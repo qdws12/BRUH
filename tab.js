@@ -2,37 +2,31 @@ var tball = $('.tab-button');
 var tcall = $('.tab-content');
 
 // 반복문 변수 let
-for(let i = 0; i< tball.length; i++){
-  tball.eq(i).on('click',function(){
-    tball.removeClass('orange');
-    tball.eq(i).addClass('orange');
-    tcall.removeClass('show');
-    tcall.eq(i).addClass('show');  
-  })
+// for(let i = 0; i< tball.length; i++){
+//   tball.eq(i).on('click',function(){
+//     탭열기(i);
+//   })
+// }
+
+$('.list').click(function(e){
+  if(e.target == tball[e.target.dataset.id]){
+    탭열기(e.target.dataset.id);
+  }
+  if(e.target == tball[e.target.dataset.id]){
+    탭열기(e.target.dataset.id);
+  }
+
+  if(e.target == tball[e.target.dataset.id]){
+    탭열기(e.target.dataset.id);
+  }
+
+
+})
+
+
+function 탭열기(변수){
+  tball.removeClass('orange');
+  tball.eq(변수).addClass('orange');
+  tcall.removeClass('show');
+  tcall.eq(변수).addClass('show');  
 }
-
-
-// tball.eq(0).on('click',function(){
-//     tball.removeClass('orange');
-//     tball.eq(0).addClass('orange');
-//     tcall.removeClass('show');
-//     tcall.eq(0).addClass('show');  
-// })
-
-// tball.eq(1).on('click',function(){
-//   if(tball.eq(1)){
-//     tball.removeClass('orange');
-//     tball.eq(1).addClass('orange');
-//     tcall.removeClass('show');
-//     tcall.eq(1).addClass('show');
-//   }
-// })
-
-// tball.eq(2).on('click',function(){
-//   if(tball.eq(2)){
-//     tball.removeClass('orange');
-//     tball.eq(2).addClass('orange');
-//     tcall.removeClass('show');
-//     tcall.eq(2).addClass('show');
-//   }
-// })
