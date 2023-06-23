@@ -12,6 +12,26 @@
     <!-- jquery cdn > mini filed > 집어넣으면 아래코드에 적용 -->
   </head>
   <body>
+
+    <div class="container mt-3">
+      <div class="card p-3">
+        <span class="carn">상품명</span>
+        <span class="carp">가격</span>
+      </div>
+    </div> 
+    
+    <script>
+      // Array 정렬 자르기 자료검색 자료추가가능
+      // var cra = ['thskxk',50000,'ghkdlxm']
+      var car = { carn : '소나타', carp : [50000, 3000, 4000] };
+
+
+      document.querySelector('.carn').innerHTML = car.carn;
+      document.querySelector('.carp').innerHTML = car.carp[0];
+    </script>
+
+
+
     <style>
       ul.list {
         list-style-type: none;
