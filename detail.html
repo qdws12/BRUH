@@ -35,24 +35,35 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
-
       <select class="form-select mt-2 form-hide">
-        <option>90</option>
-        <option>95</option>
-        <option>100</option>
-        <option>105</option>  
       </select>
     </form>
 
     <script>
       $('.form-select').eq(0).on('input', function(){
         var value = $('.form-select').eq(0).val();
-        if (value == '셔츠') {
-          $('.form-select').eq(1).removeClass('form-hide');
-        }
-        if (value == '모자'){
+        if (value == '모자') {
           $('.form-select').eq(1).addClass('form-hide');
+        }
+        else if (value == '셔츠'){
+          $('.form-select').eq(1).removeClass('form-hide');
+          $('.form-select').eq(1).html('');
+          var ssize = `<option>95</option>
+          <option>100</option>`;
+
+          $('.form-select').eq(1).append(ssize);
+          
+        }
+        else if (value == '바지'){
+          $('.form-select').eq(1).removeClass('form-hide');
+          $('.form-select').eq(1).html('');
+          var psize = `<option>28</option>
+          <option>30</option>`;
+          // 물결사용
+          $('.form-select').eq(1).append(psize);
+          // html(~~) append(~~) 가능
         }
       });
     </script>
