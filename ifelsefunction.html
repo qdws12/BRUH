@@ -128,6 +128,49 @@
     </script>
 
 
+    <script>
+      var 출석부 =  ['흥민','포로','시치','포로'];
+
+      function 이름찾기(a){
+        for(var i = 0; i < 출석부.length; i++){
+          if(a == 출석부[i]){
+            console.log('맞음');
+            return;
+          }
+        }  
+      }
+      이름찾기('포로');
+
+
+      function rnrn(){
+        for(var i = 2; i < 10; i++){
+         for(var j= 1; j < 10; j++){
+          console.log(i*j);
+         }
+        }
+      }
+
+      // rnrn();
+
+      function vudrbs(a,b){
+
+        var sum = 0;
+
+        for(let i = 0; i < a.length; i++){
+          sum += a[i];
+        }
+        
+        if(sum/a.length < b){
+          console.log('상향');
+        }
+        else{
+          console.log('동등이하');
+        }
+      }
+
+      vudrbs([10,20,30],60);
+    </script>
+
 
 
 
