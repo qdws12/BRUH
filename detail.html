@@ -42,28 +42,32 @@
     </form>
 
     <script>
+
+      var pants = [11, 22, 33];
+      var shirts = [88, 99, 1010];
+
       $('.form-select').eq(0).on('input', function(){
-        var value = $('.form-select').eq(0).val();
-        if (value == '모자') {
+        var value1 = this.value;
+        if (value1 == '모자') {
           $('.form-select').eq(1).addClass('form-hide');
         }
-        else if (value == '셔츠'){
+        else if (value1 == '셔츠'){
           $('.form-select').eq(1).removeClass('form-hide');
           $('.form-select').eq(1).html('');
-          var ssize = `<option>95</option>
-          <option>100</option>`;
-
-          $('.form-select').eq(1).append(ssize);
+          shirts.forEach(function(a,i){
+            // 파라미터 2개 a 는 array안 데이터 i 는 0부터 1씩 증가하는 정수
+          $('.form-select').eq(1).append(`<option>${a}</option>`);
+          });
           
         }
-        else if (value == '바지'){
+        else if (value1 == '바지'){
           $('.form-select').eq(1).removeClass('form-hide');
           $('.form-select').eq(1).html('');
-          var psize = `<option>28</option>
-          <option>30</option>`;
-          // 물결사용
-          $('.form-select').eq(1).append(psize);
-          // html(~~) append(~~) 가능
+          pants.forEach(function(a,i){
+            // 파라미터 2개 a 는 array안 데이터 i 는 0부터 1씩 증가하는 정수
+          $('.form-select').eq(1).append(`<option>${a}</option>`);
+          });
+          
         }
       });
     </script>
