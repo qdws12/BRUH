@@ -21,12 +21,109 @@
       </div>
     </div> 
     
+  
+
+    <div class="container">
+      <button class="btn btn-danger btcon" id="btmore">더보기</button>
+      <button class="btn btn-danger" id="btprice">가격순</button>
+      <button class="btn btn-danger" id="bttitle">가나다순</button>
+      <button class="btn btn-danger" id="btunder6">6만원이하</button>
+
+    </div>
+    
     <script>
       var products = [
         { id : 0, price : 70000, title : 'Blossom Dress' },
         { id : 1, price : 50000, title : 'Springfield Shirt' },
         { id : 2, price : 60000, title : 'Black Monastery' }
       ];
+
+
+      $('#bttitle').click(function(){
+        products.sort(function(a,b){
+          if(a.title<b.title) return -1;
+          if(a.title>b.title) return 1;
+          else return 0;
+        });
+        
+        $('.row').html('');
+
+        products.forEach(function(a,i){
+          let a1 = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${products[i].title}</h5>
+              <p>가격 : ${products[i].price}</p>
+            </div>`;
+
+          $('.row').append(a1);
+        });
+      })
+
+      $('#btunder6').click(function(){
+        var under6 = products.filter(function(a){
+          return a.price <= 60000;
+        });
+        
+        $('.row').html('');
+
+        under6.forEach(function(a,i){
+          let a1 = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${under6[i].title}</h5>
+              <p>가격 : ${under6[i].price}</p>
+            </div>`;
+
+          $('.row').append(a1);
+        });
+        
+      })
+
+      $('#btprice').click(function(){
+        products.sort(function(a,b){
+          return a.price - b.price; 
+        });
+        
+        $('.row').html('');
+
+        products.forEach(function(a,i){
+          let a1 = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${products[i].title}</h5>
+              <p>가격 : ${products[i].price}</p>
+            </div>`;
+
+          $('.row').append(a1);
+        });
+      })
+     
+      // // array 정렬
+      // var array1 = [4,1,2,6,20];
+      // var array2 = ['a','c','c','b'];
+      // array1.sort(function(a,b){
+      //   return a-b;
+      //   // 오름차순 정렬
+      //   // return 오른쪽 양수면 a 오른쪽 return 오른쪽 음수면 b 오른쪽
+      //   // 큰수를 오른쪽 으로 보냄
+      // });
+
+      // array2.sort(function(a,b){
+      //   if(a<b) return 1;
+      //   if(a>b) return -1;
+      //   else return 0;
+      //   // if(a<b) return -1;
+      //   // if(a>b) return 1;
+      //   // else return 0;
+      // });
+      // console.log(array1);
+      // console.log(array2);
+
+      // .sort() 원본변형 ㅇ
+      // .filter() 원본변형 ㄴ
+      // .map() 전부변형
+
+
+
+
 
 
       products.forEach(function(a,i){
@@ -37,19 +134,8 @@
           </div>`;
 
        $('.row').append(a1);
-
-        // document.querySelector('.row').insertAdjacentHTML('beforeend', a1);
-        // beforebegin 정방향 세로
-        // beforeend 정방향 가로
-        // afterend 역방향 세로
-        // afterbegin 역방향 가로
-        
       });
     </script> 
-
-    <div class="container btcon">
-      <button class="btn btn-danger" id="btmore">더보기</button>
-    </div>
 
     <script>
       var count = 0;
@@ -83,8 +169,9 @@
 
         })}
         if(count > 1){
-          $('.btcon').remove();
+          $('#btmore').remove();
         }
+
       })
 
     </script>
