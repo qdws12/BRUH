@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="cartv">cart</div>
+  <p>title</p>
+
+
+<script>
+  localStorage.getItem('cart');
+  var cart= JSON.parse(localStorage.getItem('cart'));
+  cart.forEach(function(a,i){
+    var cartitem = `<p>${a}</p>`;
+    $('.cartv').append(cartitem);
+  })
+</script>
+  
+</body>
+</html>
