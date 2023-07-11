@@ -154,46 +154,44 @@
       }
 
 
-    // // var cart=[];
+
     var cart2 =[];
       $(document).on('click', '.buy', function(e) {
         var title = $(e.target).siblings('h5').text();
         var object = {title:title, num:1};
 
-        if(localStorage.getItem('cart') != null){
+        // title  가져오기 
+        // object 만들어놓기 num 1 준 이유는 최초 선택 1개 고정에 다음 클릭부터 수량++ 할것
 
-          var tcart = JSON.parse(localStorage.cart);
+        if(localStorage.getItem('cart') != null){
+          // 아무것도없으면 아래 두개의 local storage 생성
+          var cart = JSON.parse(localStorage.cart);
           var 중복제거 = JSON.parse(localStorage.중복제거);
 
-          // tcart.push(title);
-          // localStorage.setItem('cart',JSON.stringify(tcart));
 
           if(!중복제거.includes(title)){
+            // !~~ 가 item이 없으면 아래의 push 2개로
+            // item 최초 투입
+            
             중복제거.push(title);
-            tcart.push(object);
-            localStorage.setItem('cart',JSON.stringify(tcart));
+            cart.push(object);
+
+            // JSON에 맞게 localStorage에 저장
+            localStorage.setItem('cart',JSON.stringify(cart));
             localStorage.setItem('중복제거',JSON.stringify(중복제거));
           }else{
-            var countc = tcart.find((i)=>{
+            // 그게 아니라면
+            // 이미 item은 투입된 상황이고 이후는 다 중복임
+            // 그래서 받아온 title이 완전히 일치하면 num를 상승시키겠음
+            var countc = cart.find((i)=>{
               if(i.title === title){
                 return i.num++;
               }
             })
-            localStorage.setItem('cart',JSON.stringify(tcart));
+            // 상승된 num 값을 저장 
+            localStorage.setItem('cart',JSON.stringify(cart));
           }
    
-          // tcart.forEach(function(e){
-          //   if(!cart1.includes(e)){
-          //     cart1.push(title);
-          //     cart1.push(e);
-          //   }else{
-          //     var countc = cart1.find((i)=>{
-          //       if(i.title === title){
-          //         return 
-          //       }
-          //     });
-          //   }
-          // });
 
         }else{
           localStorage.setItem('cart',JSON.stringify([object]));
