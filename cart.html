@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -12,7 +15,7 @@
 
 <script>
   localStorage.getItem('cart');
-  var cart= JSON.parse(localStorage.getItem('cart'));
+  var cart= JSON.parse(localStorage.getItem('중복제거'));
   cart.forEach(function(a,i){
     var cartitem = `<p>${a}</p>`;
     $('.cartv').append(cartitem);

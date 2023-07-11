@@ -154,32 +154,52 @@
       }
 
 
-      // localStorage.setItem('age',20) // 자료 저장
-      // localStorage.getItem('age') // 자료꺼내기
-      // localStorage.removeItem('age') // 삭제
-
-      // array/object -> JSON 변환 JSON.stringify()
-
-      // JSON -> array/object 변환 JSON.parse()
-
-
-    //  $('.buy').click(function(e){
-    //   var title = $(e.target).siblings('h5').text();
-    //   localStorage.setItem('cart',JSON.stringify[title]);
-    //   console.log(title);
-    //  });
-    
-      
+    // // var cart=[];
+    var cart2 =[];
       $(document).on('click', '.buy', function(e) {
         var title = $(e.target).siblings('h5').text();
+        var object = {title:title, num:1};
 
         if(localStorage.getItem('cart') != null){
+
           var tcart = JSON.parse(localStorage.cart);
-          console.log(tcart);
-          tcart.push(title);
-          localStorage.setItem('cart',JSON.stringify(tcart));
+          var 중복제거 = JSON.parse(localStorage.중복제거);
+
+          // tcart.push(title);
+          // localStorage.setItem('cart',JSON.stringify(tcart));
+
+          if(!중복제거.includes(title)){
+            중복제거.push(title);
+            tcart.push(object);
+            localStorage.setItem('cart',JSON.stringify(tcart));
+            localStorage.setItem('중복제거',JSON.stringify(중복제거));
+          }else{
+            var countc = tcart.find((i)=>{
+              if(i.title === title){
+                return i.num++;
+              }
+            })
+            localStorage.setItem('cart',JSON.stringify(tcart));
+          }
+   
+          // tcart.forEach(function(e){
+          //   if(!cart1.includes(e)){
+          //     cart1.push(title);
+          //     cart1.push(e);
+          //   }else{
+          //     var countc = cart1.find((i)=>{
+          //       if(i.title === title){
+          //         return 
+          //       }
+          //     });
+          //   }
+          // });
+
         }else{
-          localStorage.setItem('cart',JSON.stringify([title]));
+          localStorage.setItem('cart',JSON.stringify([object]));
+          cart2.push(title);
+          localStorage.setItem('중복제거',JSON.stringify(cart2));
+
         }
       });
 
