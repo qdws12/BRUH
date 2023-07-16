@@ -60,3 +60,24 @@
 .form-hide{
   display: none !important;
 }
+
+
+
+.grey{
+  /* background: lightgrey; */
+  height: 2000px;
+  margin-top: 500px;
+}
+
+.image{
+  float: right;
+  width: 400px;
+
+  position: sticky;
+  top: 25px;
+}
+
+.text{
+float: left;
+width: 300px;
+}
