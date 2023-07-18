@@ -46,7 +46,6 @@
 
 .slide-container{
   width: 300vw; /* 폭3배 */
-  transition: all 0.3s;
 }
 .slide-box{
   width: 100vw;

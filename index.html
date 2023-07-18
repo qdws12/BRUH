@@ -158,10 +158,13 @@
         </div>
       </div>
     </div>
-    <button class="slide-1">1</button>
-    <button class="slide-2">2</button>
-    <button class="slide-3">3</button>
-    <button class="slide-next">다음</button>
+    <div>
+      <button class="slide-1">1</button>
+      <button class="slide-2">2</button>
+      <button class="slide-3">3</button>
+      <button class="slide-next">다음</button>
+    </div>
+    
 
     <script> 
 
@@ -189,7 +192,6 @@
 
       var count = 0;
       $('.slide-next').on('click',function(){
-        console.log(count);
         if(count > 1){
           // 제일 처음은 이미지1이니까 패스 이미지2,이미지3 두가지만 확인하면 처음으로 복귀
           $('.slide-container').css('transform','translateX(0vw)');
@@ -203,6 +205,44 @@
 
     </script>
 
+    <script>
+      // click은 마우스 업다운 통합
+      // mousedown 마우스 찍을때
+      // mouseup 마우스 땔때
+      // mousemove 
+      // 마우스 좌표
+      // console.log(e.clientX); 
+      // console.log(e.clientY);
+
+      var tlwkr = 0;
+      var zmfflr1 = 0;
+      var chlwhd1 = 0;
+      $('.slide-box').eq(0).on('mousedown',function(e){
+        tlwkr = e.clientX;
+        zmfflr1 = true;
+      });
+      $('.slide-box').eq(0).on('mousemove',function(e){
+        console.log(e.clientX - tlwkr);
+
+        var chlwhd1 = e.clientX - tlwkr;
+        if( zmfflr1 == true){
+          $('.slide-container').css('transform',`translateX(${chlwhd1}px)`);
+        }
+      });
+      $('.slide-box').eq(0).on('mouseup',function(e){
+        zmfflr1 = false;
+
+        if(chlwhd1  < 100){
+          $('.slide-container').css('transition','all 0.3s').css('transform',`translateX(-100vw)`);
+        }else{
+          $('.slide-container').css('transition','all 0.3s').css('transform',`translateX(0vw)`);
+        }
+        setTimeout(() => {
+          $('.slide-container').css('transition','none')
+        }, 300);
+      });
+
+    </script>
 
 
 
